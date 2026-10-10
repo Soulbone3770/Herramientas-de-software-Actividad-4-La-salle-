@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: hsl(218, 23%, 16%);
+    color: hsl(193, 38%, 86%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#Advice_Container {
+    position: relative;
+    background-color: hsl(217, 19%, 24%);
+    width: 100%;
+    max-width: 540px;
+    padding: 48px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.25);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Advice_Container small {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: hsl(150, 100%, 66%);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#Advice_Text {
+    font-size: 28px;
+    font-weight: 800;
+    color: hsl(193, 38%, 86%);
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+#Advice_Text::before {
+    content: "“";
+}
+
+#Advice_Text::after {
+    content: "”";
+}
+
+#Advice_Container::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='295' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%234F5D74' d='M0 8h122v1H0zM173 8h122v1H173z'/%3E%3Cg transform='translate(138)' fill='%23CEE3E9'%3E%3Crect width='6' height='16' rx='3'/%3E%3Crect x='10' width='6' height='16' rx='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+#Randomizer_Button {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsl(150, 100%, 66%);
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 40px rgba(82, 255, 168, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#Randomizer_Button img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+#Randomizer_Button:not(:disabled):hover {
+    box-shadow: 0px 0px 40px hsl(150, 100%, 66%);
+}
+
+#Randomizer_Button.disabled-state {
+    background-color: hsl(217, 19%, 38%);
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+#Randomizer_Button.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 10px rgba(82, 255, 168, 0.1);
+    }
+    50% {
+        box-shadow: 0px 0px 25px rgba(82, 255, 168, 0.4);
+    }
+    100% {
+        box-shadow: 0px 0px 10px rgba(82, 255, 168, 0.1);
+    }
+}
+
+
